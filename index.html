@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Налоговые вычеты в Кыргызстане | Как вернуть часть налогов</title>
+    <meta name="description" content="Узнайте, как законно уменьшить налоговую базу и вернуть часть уплаченных средств в Кыргызстане. Калькулятор и гид по вычетам.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">NALOGI<span>.KG</span></div>
+            <ul class="nav-links">
+                <li><a href="#types">Виды вычетов</a></li>
+                <li><a href="#calculator">Калькулятор</a></li>
+                <li><a href="#documents">Документы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero section">
+            <div class="container hero-content">
+                <h1 class="fade-in">Верните свои деньги законно</h1>
+                <p class="fade-in delay-1">Что такое налоговые вычеты в Кыргызстане, кто их может получить и как сэкономить миллионы сомов.</p>
+                <div class="hero-stats fade-in delay-2">
+                    <div class="stat-card">
+                        <span class="stat-value">28.2 МЛН+</span>
+                        <span class="stat-label">сомов выплачено в 2024</span>
+                    </div>
+                </div>
+                <a href="#calculator" class="btn btn-primary fade-in delay-3">Рассчитать возврат</a>
+            </div>
+            <div class="hero-bg"></div>
+        </section>
+
+        <section id="types" class="section">
+            <div class="container">
+                <h2 class="section-title">Виды налоговых вычетов</h2>
+                <div class="grid-3">
+                    <div class="card glass-card">
+                        <div class="card-icon">🏠</div>
+                        <h3>Имущественный</h3>
+                        <p>На приобретение или строительство жилья по ипотечному кредиту. Можно вернуть уплаченные проценты до 230 000 сомов.</p>
+                    </div>
+                    <div class="card glass-card">
+                        <div class="card-icon">🎓</div>
+                        <h3>Социальный</h3>
+                        <p>На образование своих иждивенцев до 24 лет. До 10% от налоговой базы (до 25% если 3+ иждивенцев).</p>
+                    </div>
+                    <div class="card glass-card">
+                        <div class="card-icon">👤</div>
+                        <h3>Стандартный</h3>
+                        <p>Применяется автоматически для официально работающих: персональный вычет (650с) и на иждивенцев (100с).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator" class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title">Калькулятор вычетов</h2>
+                <div class="calc-container glass-card">
+                    <div class="calc-inputs">
+                        <div class="input-group">
+                            <label for="salary">Ежемесячная зарплата (брутто)</label>
+                            <input type="number" id="salary" value="45000" step="1000">
+                            <span class="input-hint">Сумма до вычета налогов</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="dependents">Количество иждивенцев (детей)</label>
+                            <input type="number" id="dependents" value="2" min="0" max="10">
+                        </div>
+                        <div class="input-group">
+                            <label for="education">Расходы на обучение за год</label>
+                            <input type="number" id="education" value="35000" step="1000">
+                        </div>
+                        <div class="input-group">
+                            <label for="mortgage">Уплаченные проценты по ипотеке за год</label>
+                            <input type="number" id="mortgage" value="0" step="1000">
+                        </div>
+                    </div>
+                    <div class="calc-result">
+                        <div class="result-header">Приблизительная сумма возврата:</div>
+                        <div class="result-value" id="total-refund">0 <span>СОМ</span></div>
+                        <div class="result-breakdown" id="breakdown">
+                            <p>Введите данные для расчета</p>
+                        </div>
+                        <button class="btn btn-gold" id="calc-btn">Рассчитать</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="documents" class="section">
+            <div class="container">
+                <h2 class="section-title">Что нужно для получения?</h2>
+                <div class="doc-list">
+                    <div class="doc-item">
+                        <div class="doc-num">01</div>
+                        <div class="doc-text">
+                            <h4>Единая налоговая декларация</h4>
+                            <p>Подается через личный кабинет ГНС (sti.gov.kg) до 1 мая.</p>
+                        </div>
+                    </div>
+                    <div class="doc-item">
+                        <div class="doc-num">02</div>
+                        <div class="doc-text">
+                            <h4>Заявление</h4>
+                            <p>Форма STI-191 для социального или имущественного вычета.</p>
+                        </div>
+                    </div>
+                    <div class="doc-item">
+                        <div class="doc-num">03</div>
+                        <div class="doc-text">
+                            <h4>Копии документов</h4>
+                            <p>Контракт на обучение, справка из банка по ипотеке, свидетельства о рождении.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Налоги.KG. На основе материалов 24.kg</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
