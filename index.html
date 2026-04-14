@@ -19,6 +19,11 @@
                 <li><a href="#calculator">Калькулятор</a></li>
                 <li><a href="#documents">Документы</a></li>
             </ul>
+            <button class="menu-btn" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
@@ -45,17 +50,17 @@
                     <div class="card glass-card">
                         <div class="card-icon">🏠</div>
                         <h3>Имущественный</h3>
-                        <p>На приобретение или строительство жилья по ипотечному кредиту. Можно вернуть уплаченные проценты до 230 000 сомов.</p>
+                        <p>Возвращайте до 230 000 сомов с уплаченных процентов по ипотеке при покупке или строительстве жилья.</p>
                     </div>
                     <div class="card glass-card">
                         <div class="card-icon">🎓</div>
                         <h3>Социальный</h3>
-                        <p>На образование своих иждивенцев до 24 лет. До 10% от налоговой базы (до 25% если 3+ иждивенцев).</p>
+                        <p>Верните до 10% расходов на обучение детей до 24 лет (до 25%, если в семье трое и более детей).</p>
                     </div>
                     <div class="card glass-card">
                         <div class="card-icon">👤</div>
                         <h3>Стандартный</h3>
-                        <p>Применяется автоматически для официально работающих: персональный вычет (650с) и на иждивенцев (100с).</p>
+                        <p>Автоматическая скидка на налоги: 650 сомов в месяц за себя и по 100 сомов за каждого ребенка.</p>
                     </div>
                 </div>
             </div>
@@ -65,25 +70,48 @@
             <div class="container">
                 <h2 class="section-title">Калькулятор вычетов</h2>
                 <div class="calc-container glass-card">
-                    <div class="calc-inputs">
+                    <div class="calc-tabs">
+                        <button class="tab-btn active" data-tab="standard">👤 Стандартный</button>
+                        <button class="tab-btn" data-tab="social">🎓 Обучение</button>
+                        <button class="tab-btn" data-tab="property">🏠 Ипотека</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- Shared Salary Input -->
                         <div class="input-group">
-                            <label for="salary">Ежемесячная зарплата (брутто)</label>
+                            <label for="salary">
+                                Зарплата в месяц (до вычета налогов) 
+                                <span class="info-icon" data-tooltip="Ваш оклад до удержания подоходного налога и соцотчислений (брутто)">i</span>
+                            </label>
                             <input type="number" id="salary" value="45000" step="1000">
-                            <span class="input-hint">Сумма до вычета налогов</span>
+                            <span class="input-hint">Указывайте начисленную сумму из справки или контракта</span>
                         </div>
-                        <div class="input-group">
-                            <label for="dependents">Количество иждивенцев (детей)</label>
-                            <input type="number" id="dependents" value="2" min="0" max="10">
+
+                        <!-- Tab Panels -->
+                        <div id="standard" class="tab-pane active">
+                            <div class="input-group">
+                                <label for="dependents">Количество иждивенцев (детей)</label>
+                                <input type="number" id="dependents" value="2" min="0" max="10">
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label for="education">Расходы на обучение за год</label>
-                            <input type="number" id="education" value="35000" step="1000">
+
+                        <div id="social" class="tab-pane">
+                            <div class="input-group">
+                                <label for="education">Расходы на обучение за год</label>
+                                <input type="number" id="education" value="35000" step="1000">
+                                <span class="input-hint">Собственное обучение или детей до 24 лет</span>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label for="mortgage">Уплаченные проценты по ипотеке за год</label>
-                            <input type="number" id="mortgage" value="0" step="1000">
+
+                        <div id="property" class="tab-pane">
+                            <div class="input-group">
+                                <label for="mortgage">Уплаченные проценты по ипотеке за год</label>
+                                <input type="number" id="mortgage" value="0" step="1000">
+                                <span class="input-hint">Только сумма процентов из справки банка</span>
+                            </div>
                         </div>
                     </div>
+
                     <div class="calc-result">
                         <div class="result-header">Приблизительная сумма возврата:</div>
                         <div class="result-value" id="total-refund">0 <span>СОМ</span></div>
